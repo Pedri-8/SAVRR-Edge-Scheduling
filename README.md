@@ -1,16 +1,44 @@
-# SAVRR: Self-Adaptive Variance Round Robin Scheduler
+# SAVRR – Synthetic Workload Scheduling Experiments
 
-This repository contains the simulation code used in the paper:
+This repository provides a reproducible implementation of the scheduling experiments
+reported in the paper:
 
-**"SAVRR: A Self-Adaptive, Parameter-Free Scheduling Algorithm for Latency Reduction in Dynamic Edge Computing Environments"**
+**“SAVRR: A Self-Adaptive, Parameter-Free Scheduling Algorithm for Latency Reduction in Dynamic Edge Computing Environments.”**
 
-## Dataset Description
-No external dataset was used in this study. All workloads were synthetically generated during simulation to emulate dynamic IoT–Edge environments.
+---
 
-## Requirements
+## Experiment Description
+
+The experiments are conducted using synthetically generated task workloads to emulate
+dynamic IoT–Edge computing environments.
+
+Each task is characterized by:
+- Arrival time (milliseconds)
+- CPU burst time (milliseconds)
+
+The workload is generated programmatically using a fixed random seed to ensure
+reproducibility.
+
+---
+
+## Files
+
+- `simulate_schedulers.py`  
+  Implements SAVRR, HRRN, and HEFT scheduling algorithms and computes:
+  - Mean task latency
+  - CPU utilization
+
+- `dataset/`  
+  Contains a representative sample synthetic workload used for reference.
+
+---
+
+## How to Run
+
+### Requirements
 - Python 3.8+
 - NumPy
 
-Install dependencies:
+Install dependency:
 ```bash
-pip install -r requirements.txt
+pip install numpy
